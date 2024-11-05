@@ -7,6 +7,7 @@ import Button from "../atoms/Button";
 import { saveDiet } from "../../utils/LocalStorageHelper";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   date: yup.date().required("Date is required"),
@@ -21,6 +22,7 @@ const schema = yup.object().shape({
 });
 
 function AddDietPage() {
+  const navigate = useNavigate();
   const {
     control,
     handleSubmit,
@@ -34,6 +36,7 @@ function AddDietPage() {
     saveDiet(data);
     toast.success("Diet information added successfully!");
     reset();
+    navigate("/dashboard");
   };
 
   return (
