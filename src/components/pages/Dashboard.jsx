@@ -191,7 +191,7 @@ function Dashboard() {
           </div>
 
           <div className="w-1/2">
-            <div className="flex flex-row items-center p-4 justify-between bg-secondaryGray">
+            <div className="flex flex-row items-center p-4 justify-between">
               <h3 className="text-3xl font-primaryBold">Diet Information</h3>
               <Link to="/add-diet">
                 <button
